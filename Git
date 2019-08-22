@@ -1,0 +1,45 @@
+git status 
+It will show you all modified file and new file in working tree
+
+modified:   file path
+Untracked files: that are not tracked by Git
+
+For adding Untracked files
+
+git add <file path>
+after adding file you need to commit
+
+ git commit -m "< your message>"
+For committing only modified file
+
+git commit -m "<your message>" <file_path 1> <file_path2>
+Pushing code to git
+
+git push <origin> <branch_name>
+
+--------------------------------------
+
+git add --all or git add -A or git add -A . Stages All
+
+git add . Stages New & Modified But Without Deleted
+
+git add -u Stages Modified & Deleted But Without New
+
+git commit -a Means git add -u And git commit -m "message"
+
+After writing this command follow these steps:-
+
+press i
+write your message
+press esc
+press :wq
+press enter
+git add <list of files> add specific file
+
+git add *.txt add all the txt files in current directory
+
+git add docs/*/txt add all txt files in docs directory
+
+git add docs/ add all files in docs directory
+
+git add "*.txt" or git add '*.txt' add all the files in the whole project
