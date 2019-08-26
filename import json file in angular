@@ -1,0 +1,42 @@
+/*
+Configuration
+You need to prepare the application with additional flags in your tsconfig.json beforehand. To be more specific: you need to add additional compiler options:
+ResolveJSONModule
+--resolveJsonModule allows for importing, extracting types from .json files.
+ESModuleInterop
+--esModuleInterop Allows default imports from modules with no default export. This is required since a .json file has no default output.
+Example tsconfig.json:
+*/
+
+{
+ "compileOnSave": false,
+ "compilerOptions": {
+  "baseUrl": "./",
+  "outDir": "./dist/out-tsc",
+  "sourceMap": true,
+  "declaration": false,
+  "module": "es2015",
+  "moduleResolution": "node",
+  "emitDecoratorMetadata": true,
+  "experimentalDecorators": true,
+  "importHelpers": true,
+  "target": "es5",
+  "typeRoots": [
+   "node_modules/@types"
+  ],
+  "lib": [
+   "es2018",
+   "dom"
+  ],
+  "paths": {
+   "virtual-receipt-lib": [
+    "dist/virtual-receipt-lib"
+   ],
+   "virtual-receipt-lib/*": [
+   "dist/virtual-receipt-lib/*"
+   ]
+  },
+  "resolveJsonModule": true,
+  "esModuleInterop": true
+ }
+}
