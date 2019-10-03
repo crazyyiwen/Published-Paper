@@ -84,3 +84,22 @@ http://git-annex.branchable.com/walkthrough/ #see ssh section
 `git annex get mybigfile`   retrieve the content  
 `git annex copy --from myremote mybigfile`specify the remote from which to get the file  
 
+### how to jump to and fetch the git tags
+git init
+git git remote add origin url
+git fetch --all --tags --prune Fetching origin
+First, make sure that the tag exists locally by doing
+
+# --all will fetch all the remotes.
+# --tags will fetch all tags as well
+git fetch --all --tags --prune
+Then check out the tag by running
+
+git checkout tags/<tag_name> -b <branch_name>
+Instead of origin use the tags/ prefix.
+
+In this sample you have 2 tags version 1.0 & version 1.1 you can checkout them out with any of the following:
+
+git checkout A  ...
+git checkout version 1.0  ...
+git checkout tags/version 1.0  ...
